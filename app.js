@@ -29,6 +29,10 @@ async function apiDatabase (apiURL, apiKey) {
             console.log ("The Artist Name :", allContentsArray.data.data[0].artist_titles[0]); // Test Checkpoint
             console.log ("The Array Length :", allContentsArray.data.data.length);  // Test Checkpoint
 
+            infoHeader.textContent = allContentsArray.data.data[0].artist_title;
+            infoText.textContent = allContentsArray.data.data[0].artist_display;
+            description.textContent = allContentsArray.data.data[0].provenance_text;
+
             // Loop through allContentsArray.data.data to retrieve the Artist Names and them to the select element. 
             for (let i = 0; i < allContentsArray.data.data.length; i++) {
                 let artistList = document.createElement("option");
@@ -67,6 +71,8 @@ async function theArtistDetails (index) {
         console.log(artistDetailArray); // Test Checkpoit
 
         infoHeader.textContent = artistDetailArray.data.artist_title;
+        infoText.textContent = artistDetailArray.data.artist_display;
+        description.textContent = artistDetailArray.data.provenance_text;
         
         
 

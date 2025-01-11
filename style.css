@@ -36,11 +36,11 @@ body {
 
 .contentInformation {
     display: flex;
-    margin-top: 15px;
+    margin-top: 30px;
     width: 98%;
-    height: 55vh;
+    height: 58vh;
     justify-content: space-around;
-
+    
 }
 
 
@@ -49,16 +49,24 @@ body {
         border : solid wheat 3px;
         border-radius: 10px;
         width: 47%;
-        height: 60%;
+        height: 92%;
         padding: 15px;
     }
 
         .infoHeader{
             color: white;
             font-size: 30px;
+            text-decoration: underline;
+            font-family:'Times New Roman', Times, serif;
         }
 
         .infoText {
+            color: rgb(246, 197, 105);
+            margin-top: 10px;;
+        }
+
+        
+        .description {
             color: wheat;
         }
 
@@ -68,7 +76,7 @@ body {
             width: 48%;
             margin-top: 5px;
             width: 47%;
-            height: 60%;
+            height: 92%;
             padding: 15px;
             justify-self:right;
         }
