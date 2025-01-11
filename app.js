@@ -5,24 +5,35 @@ const apiKey = "https://api.thecatapi.com/v1/images/search?limit=10";
 // Notes: The Dog API Authontication Key header { 'x-api-key' : apiKey }
 
 
- moviesDatabase('https://api.artic.edu/api/v1/artworks', '');
+ apiDatabase('https://api.artic.edu/api/v1/artworks', '');
  // moviesDatabase('https://api.thecatapi.com/v1/images/search?limit=10', apiKey);
 
+let allContentsArray = [];
 
-
-async function moviesDatabase (apiURL, apiKey) {
+async function apiDatabase (apiURL, apiKey) {
     try {
-        const responseAxios = await axios(apiURL, {
+        const apiResponseData = await axios(apiURL, {
             headers: {
                 'x-api-key': apiKey
             },
-            onDownloadProgress: console.log("DownLoading Downloading"),
-            onUploadProgress: console.log("UpLoadig UpLoading"),
+            // onDownloadProgress: console.log("DownLoading Downloading"),
+            // onUploadProgress: console.log("UpLoadig UpLoading"),
             
         });
-        console.log(responseAxios)
+            console.log(apiResponseData)
 
-        if (responseAxios.status === 200) {
+            allContentsArray = apiResponseData;
+
+            console.log (allContentsArray.data.data);
+
+            for (let i = 0; i < allBreedArray.length; i++) {
+                let breedOption = document.createElement("option");
+                breedOption.text = allBreedArray[i].name;
+                breedOption.value = allBreedArray[i].id; // Set value attribute to the breed ID
+                breedSelect.appendChild(breedOption);
+              }
+
+        if (apiResponseData.status === 200) {
             console.log("URL OK");
         }
         

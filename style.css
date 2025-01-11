@@ -1,7 +1,72 @@
 body {
-    background-color: #333f3c;
+    background-color:black;
 }
 
 .mainContainer {
+    background-color: #333f3c;
+    border: double orange 8px;
+    box-shadow: white 5px 5px 100px;
+    border-radius: 10px;
+    width: 75%;
+    height: 80vh;
+    justify-self: center;
+    align-self: center;
+    justify-items: center;
+    margin: 3em;
+}
+
+        .appTitle {
+            color: orange;
+            text-shadow: black 5px 5px 5px;
+            justify-self: center ;
+        }
+
+        .selectArtTitle {
+            color: white;
+            text-shadow: black 3px 3px 3px;
+        }
+
+        .artSelect {
+            width: 20vw;
+            align-self: center;
+        }
+
+
+.contentInformation {
+    display: flex;
+    margin-top: 15px;
+    width: 98%;
+    height: 55vh;
+    justify-content: space-around;
 
 }
+
+
+    .contectAllTextInfo{
+        margin-top: 5px;
+        border : solid wheat 3px;
+        border-radius: 10px;
+        width: 47%;
+        height: 60%;
+        padding: 15px;
+    }
+
+        .infoHeader{
+            color: white;
+            font-size: 30px;
+        }
+
+        .infoText {
+            color: wheat;
+        }
+
+        .imageContainer {
+            border : solid wheat 3px;
+            border-radius: 10px;
+            width: 48%;
+            margin-top: 5px;
+            width: 47%;
+            height: 60%;
+            padding: 15px;
+            justify-self:right;
+        }
