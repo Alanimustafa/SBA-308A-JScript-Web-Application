@@ -26,15 +26,19 @@ async function apiDatabase (apiURL, apiKey) {
             allContentsArray = apiResponseData; // saving the information in allContentsArray.
 
             console.log("allContentArray : ",allContentsArray)  // Test Checkpoint
-            console.log ("The Artist Name :", allContentsArray.data.data[10].title); // Test Checkpoint
+            console.log ("The Artist Name :", allContentsArray.data.data[0].artist_titles[0]); // Test Checkpoint
             console.log ("The Array Length :", allContentsArray.data.data.length);  // Test Checkpoint
 
             // Loop through allContentsArray.data.data to retrieve the Artist Names and them to the select element. 
-            for (let i =0; i < allContentsArray.data.data.length; i++) {
+            for (let i = 0; i < allContentsArray.data.data.length; i++) {
                 let artistList = document.createElement("option");
-                artistList.text = allContentsArray.data.data[i].title; 
+                artistList.text = allContentsArray.data.data[i].artist_titles[0];
+                artistList.value = allContentsArray.data.data[i].id;
                 artSelect.appendChild(artistList);
             }
+            console.log("The artSelect value is :::: ", artSelect.value);
+            artSelect.addEventListener("change", theArtistDetails);
+            
     // handeling any API connection error.
     } catch (error) {
         console.log("ERROR: Faild Retrieving: ", error);
@@ -42,6 +46,42 @@ async function apiDatabase (apiURL, apiKey) {
 
 }
 
+
+
+
+let artistDetailArray = []; // The array for each breed property.
+async function theArtistDetails (index) {
+
+    try {
+   //     theIntercepter(); // Intercepter
+        
+        // The Artist Title
+        const selectedArtistTitle = artSelect.value;
+//        console.log("Selected Artist value:", artSelect); // Test Checkpoint
+
+        
+        const artistData = await axios.get(`https://api.artic.edu/api/v1/artworks/${selectedArtistTitle}`);
+
+        artistDetailArray = artistData.data;
+
+        console.log(artistDetailArray); // Test Checkpoit
+
+        infoHeader.textContent = artistDetailArray.data.artist_title;
+        
+        
+
+
+
+
+
+    // const dataBreed = await axios.get(`/breeds/${selectedBreed}`);
+
+    // breedDetail = dataBreed.data;
+    } catch (error) {
+        console.log("ERROR: The Artist Detail information retrieving :", error);
+    }
+
+}
 
             // onDownloadProgress: console.log("DownLoading Downloading"),
             // onUploadProgress: console.log("UpLoadig UpLoading"),
@@ -53,37 +93,40 @@ async function apiDatabase (apiURL, apiKey) {
         // }
         
 
-        // // AXIOS Intercepter.
-        // axios.interceptors.request.use(request => {
-        //     request.metadata = request.metadata || {};
-        //     request.metadata.startTime = new Date().getTime();
-        //     return request;
-        // });
-        // axios.interceptors.request.use(request => {
-        //     request.metadata = request.metadata || {};
-        //     request.metadata.startTime = new Date().getTime();
-        //     return request;
-        // });
-        
-        // axios.interceptors.response.use(
-        //     (response) => {
-        //         response.config.metadata.endTime = new Date().getTime();
-        //         response.durationInMS = response.config.metadata.endTime - response.config.metadata.startTime;
-        //         return response;
-        //     },
-        //     (error) => {
-        //         error.config.metadata.endTime = new Date().getTime();
-        //         error.durationInMS = error.config.metadata.endTime - error.config.metadata.startTime;
-        //         throw error;
-        // });
-        
-        // (async () => {
-        //     const url = apiURL;
-        
-        //     const { data, durationInMS } = await axios(url);
-        //     console.log(`Request took ${durationInMS} milliseconds.`);
-        //     console.log(data);
-        // })();
+        // Intercepter.
+        function theIntercepter () {
+            axios.interceptors.request.use(request => {
+                request.metadata = request.metadata || {};
+                request.metadata.startTime = new Date().getTime();
+                return request;
+            });
+            axios.interceptors.request.use(request => {
+                request.metadata = request.metadata || {};
+                request.metadata.startTime = new Date().getTime();
+                return request;
+            });
+            
+            axios.interceptors.response.use(
+                (response) => {
+                    response.config.metadata.endTime = new Date().getTime();
+                    response.durationInMS = response.config.metadata.endTime - response.config.metadata.startTime;
+                    return response;
+                },
+                (error) => {
+                    error.config.metadata.endTime = new Date().getTime();
+                    error.durationInMS = error.config.metadata.endTime - error.config.metadata.startTime;
+                    throw error;
+            });
+            
+            (async () => {
+// CHECK                
+                const url = apiDatabase;
+            
+                const { data, durationInMS } = await axios(url);
+                console.log(`Request took ${durationInMS} milliseconds.`);
+                console.log(data);
+            })();
+        }
 
 
 
