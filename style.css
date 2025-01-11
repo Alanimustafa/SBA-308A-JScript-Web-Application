@@ -24,11 +24,13 @@ body {
         .selectArtTitle {
             color: white;
             text-shadow: black 3px 3px 3px;
+            margin: 0px;
         }
 
         .artSelect {
-            width: 20vw;
+            width: 40vw;
             align-self: center;
+            
         }
 
 
