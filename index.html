@@ -9,6 +9,60 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- App Main Container -->
+        <div class="mainContainer">
+
+            <!-- Select | Option Container -->
+             <div class="searchContainer">
+
+                <!-- The Search Drop List Header -->
+                <h2 class="w-100 text-center mt-5">Select Art</h2>
+                <select
+                  id="artSelect"
+                  style="width: 300px;"
+                  class="artSelect"
+                >
+                </select>
+                <div class="searchBTNContainer">
+                  <button id="searchBTN" class="searchBTN">
+                    Search
+                  </button>
+                </div>
+
+             </div>
+
+
+            <!-- Images Presentation Container -->
+              <div class="imageContainer">
+
+                <!-- The selection Image -->
+                <img class="selectionImage" />
+  
+              </div>
+
+            <!-- Received API Text Information -->
+             <div class="contentInformation">
+
+                <!-- The content header -->
+                <div
+                id="infoHeader"
+                class="px-5 py-3 mx-auto"
+                style="max-width: 1600px;"
+            ></div>
+
+            <!-- The content info text -->
+            <div
+                id="infoText"
+                class="px-5 py-3 mx-auto"
+                style="max-width: 1600px;"
+            ></div>
+            
+
+             </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         <script src="app.js" async defer></script>
     </body>
