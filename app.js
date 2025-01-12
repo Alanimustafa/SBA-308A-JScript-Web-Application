@@ -24,13 +24,13 @@ export async function apiDatabase (apiURL, apiKey) {
             },
         });
 
-            console.log("apiResponce :",apiResponseData) // Test Checkpoint
+            // console.log("apiResponce :",apiResponseData) // Test Checkpoint
 
             allContentsArray = apiResponseData; // saving the information in allContentsArray.
 
-            console.log("allContentArray : ",allContentsArray)  // Test Checkpoint
-            console.log ("The Artist Name :", allContentsArray.data.data[0].artist_titles[0]); // Test Checkpoint
-            console.log ("The Array Length :", allContentsArray.data.data.length);  // Test Checkpoint
+            // console.log("allContentArray : ",allContentsArray)  // Test Checkpoint
+            // console.log ("The Artist Name :", allContentsArray.data.data[0].artist_titles[0]); // Test Checkpoint
+            // console.log ("The Array Length :", allContentsArray.data.data.length);  // Test Checkpoint
 
             infoHeader.textContent = allContentsArray.data.data[0].artist_title;
             infoText.textContent = allContentsArray.data.data[0].artist_display;
@@ -43,7 +43,7 @@ export async function apiDatabase (apiURL, apiKey) {
                 artistList.value = allContentsArray.data.data[i].id;
                 artSelect.appendChild(artistList);
             }
-            console.log("The artSelect value is :::: ", artSelect.value);
+            // console.log("The artSelect value is :::: ", artSelect.value); // Test Checkpoint
             artSelect.addEventListener("change", theArtistDetails);
             
     // handeling any API connection error.

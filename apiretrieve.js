@@ -14,7 +14,7 @@ export async function theArtistDetails (index) {
 
         artistDetailArray = artistData.data;
 
-        console.log(artistDetailArray); // Test Checkpoit
+        // console.log(artistDetailArray); // Test Checkpoit
         
         infoHeader.textContent = artistDetailArray.data.artist_title; // Adding the artist title.
         infoText.textContent = artistDetailArray.data.artist_display; // Adding the artist display informatio (DoB or DoD).
@@ -26,7 +26,7 @@ export async function theArtistDetails (index) {
 
         // for (let i = 0; i < 1; i++) {
             let art_image_id = artistDetailArray.data.image_id;
-            const imageData = await axios.get(`https://api.artic.edu/api/v1/artworks/27992?fields=id,title,${art_image_id}`, {
+            const imageData = await axios.get(`https://api.artic.edu/api/v1/artworks?ids=27992,28560&fields=id,title,${art_image_id}`, {
 
                 "data": {
                     "id": 27992,
@@ -42,7 +42,8 @@ export async function theArtistDetails (index) {
 
             const url = imageData.config.config.iiif_url;
             
-            console.log(url);
+            // console.log(url); // Test Checkpoint.
+            // console.log(imageData); // Test Checkpoint.
             
             
             const imageContainer = document.getElementById('imageContainer');

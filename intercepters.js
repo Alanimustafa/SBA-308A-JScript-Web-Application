@@ -5,6 +5,7 @@ export async function theIntercepter (imageData) {
         request.metadata = request.metadata || {};
         request.metadata.startTime = new Date().getTime();
         document.body.style.cursor = "progress";
+        imageContainer.style.borderColor = "orange" // Border color will be orange during the loading.
         return request;
       });
     
@@ -18,6 +19,7 @@ export async function theIntercepter (imageData) {
             `Request took ${response.config.metadata.durationInMS} milliseconds.`
           );
           document.body.style.cursor = "default";
+          imageContainer.style.borderColor = "wheat"
           return response;
         },
         (error) => {
