@@ -1,5 +1,6 @@
 // const { default: axios } = require("axios");
 import {theArtistDetails} from './apiretrieve.js'
+import {addArtist} from './addArtist.js'
 
 
 
@@ -20,7 +21,7 @@ export async function apiDatabase (apiURL, apiKey) {
         // Retrieving All Artists information.
         const apiResponseData = await axios.get(apiURL, {
             headers: {
-                'x-api-key': apiKey
+                'x-api-key': apiKey // I kept this header in case some APIs need a key
             },
         });
 
@@ -53,6 +54,10 @@ export async function apiDatabase (apiURL, apiKey) {
 
 }
 
+const addArtistBTN = document.getElementById ('addArtistBTN') ;
+addArtistBTN.addEventListener ('click', () => {
+    addArtist();
+}); 
 
 
 

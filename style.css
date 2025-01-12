@@ -45,13 +45,29 @@ body {
         }
 
 
+        .newArtistContainer {
+            display: flex; 
+            justify-content: space-around;
+            margin: 10px;
+            background-color: #181d1c;
+            padding: 5px;
+            border: solid wheat 1px;
+            border-radius: 10px;
+        }
+
+            .addArtistBTN {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 23px;;
+                margin-top: 2px;
+                margin-bottom: 0px;
+            }
+
 .contentInformation {
     display: flex;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 98%;
-    height: 58vh;
+    height: 53vh;
     justify-content: space-between;
-    
 }
 
 
@@ -93,4 +109,5 @@ body {
             padding: 15px;
             justify-self:right;
             background-image: url("https://artslife.com/wp-content/uploads/2019/03/dechirico..jpg");
+            
         }
