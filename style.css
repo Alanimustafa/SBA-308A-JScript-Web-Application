@@ -59,6 +59,7 @@ body {
         width: 47%;
         height: 92%;
         padding: 15px;
+        font-family: 'Times New Roman', Times, serif;
     }
 
         .infoHeader{
@@ -70,12 +71,13 @@ body {
 
         .infoText {
             color: rgb(246, 197, 105);
-            margin-top: 10px;;
+            margin-top: 10px;
         }
 
         
         .description {
             color: wheat;
+            font-size: 20px;
         }
 
         .imageContainer {

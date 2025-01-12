@@ -2,10 +2,13 @@
 import {theArtistDetails} from './apiretrieve.js'
 
 
-// Notes: The Dog API Authontication Key header { 'x-api-key' : apiKey }
+
+// The institute of Chicago API
+let artOfChicagoLink = 'https://api.artic.edu/api/v1/artworks' ;
 
 
- apiDatabase('https://api.artic.edu/api/v1/artworks', '');
+// apiDatabase Function with two arguments; the API link and a key (if any);
+ apiDatabase(artOfChicagoLink, '');
  // moviesDatabase('https://api.thecatapi.com/v1/images/search?limit=10', apiKey);
 
 
