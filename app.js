@@ -10,9 +10,8 @@ let artOfChicagoLink = 'https://api.artic.edu/api/v1/artworks' ;
 
 // apiDatabase Function with two arguments; the API link and a key (if any);
  apiDatabase(artOfChicagoLink, '');
- // moviesDatabase('https://api.thecatapi.com/v1/images/search?limit=10', apiKey);
 
-
+ 
 //  All Functions
 let allContentsArray = [];
 
@@ -58,45 +57,4 @@ const addArtistBTN = document.getElementById ('addArtistBTN') ;
 addArtistBTN.addEventListener ('click', () => {
     addArtist();
 }); 
-
-
-
-
-
-            // onDownloadProgress: console.log("DownLoading Downloading"),
-            // onUploadProgress: console.log("UpLoadig UpLoading"),
-
-
-           
-        // if (apiResponseData.status === 200) {
-        //     console.log("URL OK");
-        // }
-        
-
-        // Intercepter.
-
-
-
-        // if (responseAxios) {
-        //     console.log ("Before JSON" , responseAxios);
-        //     console.log("AXIOS Response Headers", responseAxios.headers);
-        //     console.log("AXIOS Response config", responseAxios.config);
-        //     console.log("AXIOS Response", responseAxios.status);
-        //     console.log("AXIOS Response Status Text", responseAxios.statusText);
-        //     //console.log("AXIOS Response", responseAxios.data.data[0]);
-        //     console.log("AXIOS Response", responseAxios.data.data);
-        //     console.log ("")
-        //     // console.log ("After AXIOS")
-        //     // console.log("After JSON Response",JSONresponse);
-        //     // console.log("After JSON Response",JSONresponse[0].id);
-        //     // console.log("After JSON Response",JSONresponse[0].url);
-
-        //     // const theURL = JSONresponse.response;
-        //     // console.log("After JSON Response",theURL);
-
-
-        // } else {
-        //     throw ("ERROR RESPONSE :", responseAxios.status);
-        // }
-
 

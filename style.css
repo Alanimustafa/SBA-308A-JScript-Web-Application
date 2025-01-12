@@ -33,7 +33,7 @@ body {
         }
 
         .selectArtTitle {
-            color: white;
+            color: rgb(232, 231, 231);
             text-shadow: black 3px 3px 3px;
             margin: 0px;
         }
@@ -41,7 +41,7 @@ body {
         .artSelect {
             width: 40vw;
             align-self: center;
-            
+            background-color: wheat;
         }
 
 
@@ -60,6 +60,18 @@ body {
                 font-size: 23px;;
                 margin-top: 2px;
                 margin-bottom: 0px;
+                background-color: wheat;
+            }
+            .addArtistBTN:hover  {
+                cursor: pointer;
+            }
+
+            .artistName {
+                background-color: wheat;
+            }
+            .artistDoB {
+                width: 34%;
+                background-color: wheat;
             }
 
 .contentInformation {

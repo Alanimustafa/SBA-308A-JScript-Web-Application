@@ -1,4 +1,3 @@
-// import {theArtistDetails} from './apiretrieve.js'
 
 export async function theIntercepter (imageData) {
     axios.interceptors.request.use((request) => {
