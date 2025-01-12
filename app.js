@@ -1,6 +1,6 @@
 // const { default: axios } = require("axios");
+import {theArtistDetails} from './apiretrieve.js'
 
-const apiKey = "https://api.thecatapi.com/v1/images/search?limit=10";
 
 // Notes: The Dog API Authontication Key header { 'x-api-key' : apiKey }
 
@@ -12,7 +12,7 @@ const apiKey = "https://api.thecatapi.com/v1/images/search?limit=10";
 //  All Functions
 let allContentsArray = [];
 
-async function apiDatabase (apiURL, apiKey) {
+export async function apiDatabase (apiURL, apiKey) {
     try {
         // Retrieving All Artists information.
         const apiResponseData = await axios.get(apiURL, {
@@ -53,88 +53,7 @@ async function apiDatabase (apiURL, apiKey) {
 
 
 
-let artistDetailArray = []; // The array for each breed property.
-async function theArtistDetails (index) {
 
-    try {
-   //     theIntercepter(); // Intercepter
-        
-        // The Artist Title
-        const selectedArtistTitle = artSelect.value;
-//        console.log("Selected Artist value:", artSelect); // Test Checkpoint
-
-        
-        const artistData = await axios.get(`https://api.artic.edu/api/v1/artworks/${selectedArtistTitle}`);
-
-        artistDetailArray = artistData.data;
-
-        console.log(artistDetailArray); // Test Checkpoit
-
-        infoHeader.textContent = artistDetailArray.data.artist_title; // Adding the artist title.
-        infoText.textContent = artistDetailArray.data.artist_display; // Adding the artist display informatio (DoB or DoD).
-        description.textContent = artistDetailArray.data.provenance_text; // Adding the artist about.
-        
-        
-        
-        
-
-
-        for (let i = 0; i < 1; i++) {
-            let art_image_id = artistDetailArray.data.image_id;
-            const imageData = await axios.get(`https://api.artic.edu/api/v1/artworks/27992?fields=id,title,${art_image_id}`, {
-
-                "data": {
-                    "id": 27992,
-                    "title": "A Sunday on La Grande Jatte — 1884",
-                    "image_id": art_image_id
-                },
-                "config": {
-                    "iiif_url": `https://www.artic.edu/iiif/2/${art_image_id}/full/843,/0/default.jpg`,
-                }
-                
-            });
-        
-            //console.log("This is the image id : " ,art_image_id);
-            console.log("This is the image data : " ,imageData.config.config.iiif_url);
-
-            const url = imageData.config.config.iiif_url;
-
-            console.log(url);
-            const imageContainer = document.getElementById('imageContainer');
-            imageContainer.style.backgroundImage = `url(${url})`;
-            imageContainer.style.backgroundPosition = "cover";
-
-            console.log(imageContainer);
-        }
-
-
-
-
-
-            
-            // const imageID = imageData.data[0].id;
-      
-            // if (imageID === previousImgID) break; // If two images are the same then end loop
-            // previousImgID = imageID;
-            // const imgAlt = "Image of " + imageData.data[0].breeds[0].name;
-      
-            // const imageItem = Carousel.createCarouselItem(url, imgAlt, imageID);
-            // Carousel.appendCarousel(imageItem);
-          
-    
-
-
-
-
-
-    // const dataBreed = await axios.get(`/breeds/${selectedBreed}`);
-
-    // breedDetail = dataBreed.data;
-    } catch (error) {
-        console.log("ERROR: The Artist Detail information retrieving :", error);
-    }
-
-}
 
             // onDownloadProgress: console.log("DownLoading Downloading"),
             // onUploadProgress: console.log("UpLoadig UpLoading"),
@@ -147,39 +66,6 @@ async function theArtistDetails (index) {
         
 
         // Intercepter.
-        function theIntercepter () {
-            axios.interceptors.request.use(request => {
-                request.metadata = request.metadata || {};
-                request.metadata.startTime = new Date().getTime();
-                return request;
-            });
-            axios.interceptors.request.use(request => {
-                request.metadata = request.metadata || {};
-                request.metadata.startTime = new Date().getTime();
-                return request;
-            });
-            
-            axios.interceptors.response.use(
-                (response) => {
-                    response.config.metadata.endTime = new Date().getTime();
-                    response.durationInMS = response.config.metadata.endTime - response.config.metadata.startTime;
-                    return response;
-                },
-                (error) => {
-                    error.config.metadata.endTime = new Date().getTime();
-                    error.durationInMS = error.config.metadata.endTime - error.config.metadata.startTime;
-                    throw error;
-            });
-            
-            (async () => {
-// CHECK                
-                const url = apiDatabase;
-            
-                const { data, durationInMS } = await axios(url);
-                console.log(`Request took ${durationInMS} milliseconds.`);
-                console.log(data);
-            })();
-        }
 
 
 
