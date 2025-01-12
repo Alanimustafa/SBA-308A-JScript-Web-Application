@@ -15,7 +15,7 @@ let allContentsArray = [];
 async function apiDatabase (apiURL, apiKey) {
     try {
         // Retrieving All Artists information.
-        const apiResponseData = await axios(apiURL, {
+        const apiResponseData = await axios.get(apiURL, {
             headers: {
                 'x-api-key': apiKey
             },
@@ -70,11 +70,58 @@ async function theArtistDetails (index) {
 
         console.log(artistDetailArray); // Test Checkpoit
 
-        infoHeader.textContent = artistDetailArray.data.artist_title;
-        infoText.textContent = artistDetailArray.data.artist_display;
-        description.textContent = artistDetailArray.data.provenance_text;
+        infoHeader.textContent = artistDetailArray.data.artist_title; // Adding the artist title.
+        infoText.textContent = artistDetailArray.data.artist_display; // Adding the artist display informatio (DoB or DoD).
+        description.textContent = artistDetailArray.data.provenance_text; // Adding the artist about.
         
         
+        
+        
+
+
+        for (let i = 0; i < 1; i++) {
+            let art_image_id = artistDetailArray.data.image_id;
+            const imageData = await axios.get(`https://api.artic.edu/api/v1/artworks/27992?fields=id,title,${art_image_id}`, {
+
+                "data": {
+                    "id": 27992,
+                    "title": "A Sunday on La Grande Jatte — 1884",
+                    "image_id": art_image_id
+                },
+                "config": {
+                    "iiif_url": `https://www.artic.edu/iiif/2/${art_image_id}/full/843,/0/default.jpg`,
+                }
+                
+            });
+        
+            //console.log("This is the image id : " ,art_image_id);
+            console.log("This is the image data : " ,imageData.config.config.iiif_url);
+
+            const url = imageData.config.config.iiif_url;
+
+            console.log(url);
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.backgroundImage = `url(${url})`;
+            imageContainer.style.backgroundPosition = "cover";
+
+            console.log(imageContainer);
+        }
+
+
+
+
+
+            
+            // const imageID = imageData.data[0].id;
+      
+            // if (imageID === previousImgID) break; // If two images are the same then end loop
+            // previousImgID = imageID;
+            // const imgAlt = "Image of " + imageData.data[0].breeds[0].name;
+      
+            // const imageItem = Carousel.createCarouselItem(url, imgAlt, imageID);
+            // Carousel.appendCarousel(imageItem);
+          
+    
 
 
 

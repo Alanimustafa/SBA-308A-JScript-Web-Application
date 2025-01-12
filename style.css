@@ -2,6 +2,13 @@ body {
     background-color:black;
 }
 
+.assignmentTitle{
+    color: white;
+    font-size: 17px;
+    justify-self: center;
+    margin-top: 2em;
+}
+
 .mainContainer {
     background-color: #333f3c;
     border: double orange 8px;
@@ -13,6 +20,7 @@ body {
     align-self: center;
     justify-items: center;
     margin: 3em;
+    margin-bottom: 0px;
 }
 
         .appTitle {
@@ -79,4 +87,5 @@ body {
             height: 92%;
             padding: 15px;
             justify-self:right;
+            background-image: url("https://artslife.com/wp-content/uploads/2019/03/dechirico..jpg");
         }
