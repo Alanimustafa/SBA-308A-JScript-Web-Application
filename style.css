@@ -1,18 +1,19 @@
 body {
-    background-color:black;
+    background-image: url('https://media.istockphoto.com/id/1337046545/vector/black-and-grey-dark-color-textured-effect-natural-wood-grain-pattern-vector-illustration.jpg?s=612x612&w=0&k=20&c=DPbyrzJZRlXXkR5dYUMgsj7RG5th0dLlL7inwRS2A4A=');
 }
 
 .assignmentTitle{
     color: white;
-    font-size: 17px;
+    font-size: 20px;
     justify-self: center;
     margin-top: 2em;
+    text-shadow: black 5px 5px 5px;
 }
 
 .mainContainer {
     background-color: #333f3c;
     border: double orange 8px;
-    box-shadow: white 5px 5px 100px;
+    box-shadow: rgb(255, 222, 150) 5px 5px 150px;
     border-radius: 10px;
     width: 75%;
     height: 80vh;
@@ -27,6 +28,8 @@ body {
             color: orange;
             text-shadow: black 5px 5px 5px;
             justify-self: center ;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 37px;
         }
 
         .selectArtTitle {
@@ -47,7 +50,7 @@ body {
     margin-top: 30px;
     width: 98%;
     height: 58vh;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
 
