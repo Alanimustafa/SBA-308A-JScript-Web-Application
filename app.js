@@ -7,6 +7,10 @@ import {addArtist} from './addArtist.js'
 // The institute of Chicago API
 let artOfChicagoLink = 'https://api.artic.edu/api/v1/artworks' ;
 
+// let artOfChicagoLink = 'https://api.artic.edu/api/v1/artworks' ;
+// let apiKey = "live_OY0kLPBU80AYl3XaOOB3mMAcOnFgJX9qagrzMcWBEvl7pXNVdy6W8OAzBW2o8eb2" ;
+
+
 
 // apiDatabase Function with two arguments; the API link and a key (if any);
  apiDatabase(artOfChicagoLink, '');

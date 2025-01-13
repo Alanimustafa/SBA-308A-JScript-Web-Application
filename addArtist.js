@@ -12,12 +12,16 @@ export async function addArtist () {
 
         let data = [artistName.innerHTML, artistDoB.innerHTML];
         let apiURL = "https://api.artic.edu/api/v1/artworks";
-        
+
+        console.log(apiURL);
         const apiResponseData = await axios.post(apiURL, data )
+        // console.log(apiResponseData.data.data); // For Test only
 
-        console.log (`${artistName.value} - Date of Birth is ${artistDoB.value} has been posted. Status ${apiResponseData.status}`);
 
-        let postMessage = `${artistName.value} - Date of Birth is ${artistDoB.value} has been posted. Status ${apiResponseData.status}`;
+
+        console.log (`${artistName.value} - Date of Birth is ${artistDoB.value}. It has been posted. Status ${apiResponseData.status}`);
+
+        let postMessage = `${artistName.value} - Date of Birth is ${artistDoB.value}. It has been posted. Status ${apiResponseData.status}`;
 
         const infoText = document.getElementById ('infoText')
         infoText.innerText = "Artist name   :" + artistName.value;

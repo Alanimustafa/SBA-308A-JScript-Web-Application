@@ -53,5 +53,4 @@ export async function theArtistDetails (index) {
     } catch (error) {
         console.log("ERROR: The Artist Detail information retrieving :", error);
     }
-
 }
